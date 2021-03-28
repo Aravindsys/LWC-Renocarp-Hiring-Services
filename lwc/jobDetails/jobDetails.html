@@ -1,0 +1,16 @@
+<template>
+    <lightning-card>
+       
+        <lightning-tabset variant="scoped">
+          <lightning-tab label="Detail">
+            <c-job-detail position-id={positionId}></c-job-detail>
+          </lightning-tab>
+          <lightning-tab label="Add Review">
+            <c-add-Review onreviewupdate={updateReview} position-id={positionId}></c-add-Review>
+          </lightning-tab>
+          <lightning-tab label="Reviews" value="reviews">
+            <c-view-reviews ongotnewreviews={stopLoading} position-id={positionId} is-loading={isLoadingReview}></c-view-reviews>
+          </lightning-tab>
+        </lightning-tabset>
+    </lightning-card>
+</template>

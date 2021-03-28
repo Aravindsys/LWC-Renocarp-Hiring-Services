@@ -1,0 +1,16 @@
+<template>
+    <lightning-layout multiple-rows="true">
+        <lightning-layout-item size="12">
+            <p class="slds-var-p-horizontal_small">
+        <c-job-search-form onjobroleselect={updateSelectedJobRoleId}></c-job-search-form>
+             </p>    
+    </lightning-layout-item>
+
+
+    <lightning-layout-item size="12" class="slds-p-top_small slds-is-relative">
+            <c-job-search-results job-role-id={selectedJobRoleId}>
+
+            </c-job-search-results>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

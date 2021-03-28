@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+<masterLabel>Position</masterLabel>
+<isExposed>true</isExposed>
+<description>This application event carries the currently 
+    selected position payload to Detail and Location component
+</description>
+<lightningMessageFields>
+    <fieldName>positionId</fieldName>
+    <description>The position Id of the record</description>
+</lightningMessageFields>
+</LightningMessageChannel>

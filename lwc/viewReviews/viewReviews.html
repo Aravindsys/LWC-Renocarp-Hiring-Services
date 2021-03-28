@@ -1,0 +1,45 @@
+<template>
+    <!-- div for when there are no reviews available -->
+   
+    <template if:false={reviews}>
+        <div class="slds-align_absolute-center">No reviews available</div>
+    </template>
+    <!-- div for when there are reviews available -->
+    <template if:true={reviews}>
+        <div style="height:15rem;width:24rem" class="slds-feed reviews-style slds-is-relative slds-scrollable_y">
+            <!-- insert spinner -->
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading" variant="brand" size="small"></lightning-spinner>
+            </template>
+            <template if:false={isLoading}>
+                <ul class="slds-feed__list">
+                    <!-- start iteration -->
+                    <template for:each={reviews} for:item="review">
+                        <li class="slds-feed__item" key={review.Id}>
+                            <article class="slds-post">
+                              
+                              <div class="slds-text-longform">
+                               Name: <span class="slds-text-title_caps">{review.Name}</span><br />
+                               Comment:  <lightning-formatted-rich-text title="Comment" value={review.Comment__c}>
+                                </lightning-formatted-rich-text>
+                                <div> Rating: &nbsp;
+                                <lightning-formatted-number title="Rating" value={review.Rating__c}>
+                                </lightning-formatted-number>
+                                </div>
+                                <div> Created Date: &nbsp;
+                                    <span class="slds-text-body_small">
+                                        <lightning-formatted-date-time value={review.CreatedDate}></lightning-formatted-date-time>
+                                   
+                                    </span>
+                                </div>
+                                
+                              </div>
+                            </article>
+                          </li>
+                    </template>
+                    <!-- end iteration -->
+                  </ul>
+            </template>
+            </div>
+    </template>
+  </template>

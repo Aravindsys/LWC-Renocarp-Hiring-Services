@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title={positionName}>
+        <div if:true={position.data} class="slds-p-around_medium lgc-bg">
+            <lightning-tile label={positionName}>
+                <p class="slds-truncate" title={jobRoleName}>Job Role: {jobRoleName}</p>
+                <p class="slds-truncate" title={companyName}>Company Name: {companyName}</p>
+                <p class="slds-truncate" title={personName}>Contact Person: {personName}</p>
+                <p class="slds-truncate" title={personEmail}>Email Id: {personEmail}</p>
+                <p class="slds-truncate" title={personPhone}>Phone: {personPhone}</p>
+                <p class="slds-truncate" title={age}>Age: {age}</p>
+                <p class="slds-truncate" title={salary}>Salary: Rs {salary} INR</p>
+                <p class="slds-truncate" title={experience}>Experience: {experience} yrs</p>
+               
+                <p class="slds-truncate" title="JSI">Job Satisfaction Index: {jobSatisfactionIndex}</p>
+            </lightning-tile>
+        </div>
+        <div if:false={position.data} class="slds-align-middle">
+            Select a Job to get its details
+        </div>
+    </lightning-card> 
+   
+</template>

@@ -1,0 +1,32 @@
+<template>
+    <!--Job Type -->
+    <lightning-card title="Filter by Job Type and Role">
+    <div class="c-container">
+        <lightning-layout horizontal-align="space">
+            <lightning-layout-item padding="around-small">
+                <div class="custom-box">
+                    <lightning-combobox
+                     label="Job Type"
+                     value={selectedJobTypeId}
+                     placeholder="Select Job Type"
+                     options={jobTypeOptions}
+                     onchange={updateJobRole}
+                      ></lightning-combobox>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <div class="custom-box">
+                    <lightning-combobox
+                     label="Job Role"
+                     value={selectedJobRoleId}
+                     placeholder="Select Job Role"
+                     options={jobRoleOptions}
+                     onchange={handleChange} ></lightning-combobox>
+                </div>
+            </lightning-layout-item>
+          
+        </lightning-layout>
+    </div>
+    </lightning-card>
+    
+</template>

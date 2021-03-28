@@ -1,0 +1,52 @@
+<template>
+    <template if:true={positionNameReview}> 
+    <lightning-record-edit-form object-api-name={review_object} onsuccess={handleSuccess} onsubmit={handleSubmit}>
+
+        <lightning-layout multiple-rows vertical-align="start">
+            <lightning-layout-item padding="horizontal-small" size="12">
+                <!-- review comment field code using commentField -->
+                <h2 class="slds-align-middle" style="font-weight: bold;">{positionNameReview}</h2>
+               
+           </lightning-layout-item>
+            <lightning-layout-item size="8" padding="horizontal-small">
+            <div class="slds-form-element">
+                <!-- review subject field code using nameField -->
+                <abbr title="required" class="slds-required">*</abbr>
+                <label class="slds-form-element__label" for="Name">Name</label>
+                <lightning-input-field id="Name" variant="label-hidden" field-name={nameField} required>
+                </lightning-input-field>
+            </div>
+          </lightning-layout-item>
+
+          <lightning-layout-item padding="horizontal-small" size="12">
+               <!-- review comment field code using commentField -->
+               
+               <lightning-input-field field-name={commentField}></lightning-input-field>
+          </lightning-layout-item>
+        
+
+
+        <lightning-layout-item padding="horizontal-small">
+            <!-- review comment field code using commentField -->
+            
+            <lightning-input-field field-name={ratingField}></lightning-input-field>
+       </lightning-layout-item>
+     </lightning-layout>
+        <div class="slds-align_absolute-center" style="margin-top: 5px">
+               <!-- add submit button -->
+               <lightning-button icon-name="utility:save" type="submit" label="Submit">
+               </lightning-button>
+        </div>
+      </lightning-record-edit-form>
+      </template>
+      <template if:true={error}>
+        <div class="slds-align-middle">
+            Some error occured: {error}
+        </div>
+    </template>
+      <template if:false={positionNameReview}>
+          <div class="slds-align-middle">
+              Select a Job to add a Review
+          </div>
+      </template>
+</template>

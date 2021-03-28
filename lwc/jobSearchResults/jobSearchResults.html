@@ -1,0 +1,66 @@
+<template>
+    
+    <lightning-card class="slds-is-relative slds-scrollable_y" if:true={positions.data}>
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+              <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Key">Position Name</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Value">Job Role</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Value2">Company Name</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Value3">View Details</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <template  for:each={positions.data} for:item="position">
+             
+                <tr key={position.Id}>
+                    <th scope="col">
+                     {position.Name}
+                    </th>
+                    <th scope="col">
+                      {position.JobRole__r.Name}
+                    </th>
+                    <th scope="col">
+                        {position.Company__r.Name}
+                     </th>
+                     <th scope="col">
+                        <lightning-button class="slds-align-middle" name={position.Id} label="View" variant="brand" icon-name="utility:save" onclick={selectedPosition}>
+
+                        </lightning-button>
+                     </th>
+                </tr>
+                
+            </template>
+        </tbody>
+        </table>
+       
+    </lightning-card>
+
+     <lightning-card if:false={positions.data}>
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+              <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Key"></div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <th scope="col">
+                     Select a Job Type and Role to display the Positions
+              </th>
+             </tr>
+        </tbody>
+        </table>
+    </lightning-card>
+
+</template>
