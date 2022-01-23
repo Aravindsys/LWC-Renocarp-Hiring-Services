@@ -15,7 +15,7 @@ JobDetails Component:
              It consists of lightning-tabset with 3 tabs separated for viewing the details of the job, to add a review for the Job Position being selected and to view
              the lists of existing reviews for a particular Job Position
             
- JobLication Components:
+ JobLocation Components:
              As the name indicates, it displays the location of the Job in the Map. It uses the lightning-map basic component from LWC and fetches the data for Latitude 
              and Longitude from the Job's company location.
              
